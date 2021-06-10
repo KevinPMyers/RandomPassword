@@ -35,7 +35,10 @@ var characters =
   // passValue[chartype][Math.floor(Math.random()*10)]
 
 
-
+// THINK IT OUT
+// I want to create a function that will take variables, in this case, upper and lower case letters, numbers 0-9, special characters, and store those values for future use.
+// Next I need to set parameters for how many characters I want to be generated in a random password. Between 8-128.
+// Then I want my stored values to be randomly selected, and from my parameters, return a string the falls in the confines of how many characters I want.
   function generatePassword() {
     debugger;
     var characters = choices
@@ -55,7 +58,6 @@ var characters =
 // var addition = function(numOne, numTwo){
 //   return numOne + numTwo;
 // }
-
 // addition(1, 2)
 
 // Write password to the #password input
