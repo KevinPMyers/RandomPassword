@@ -21,44 +21,64 @@
 var generateBtn = document.querySelector("#generate");
 // create global variable array for variables that go in password
 // DISCOVERED Dictionaries for arrays!!!! How to use it tho...
-var characters = 
-  {
-    numbers: ["0", "1", "2", "3", "4", "5", "6" , "7", "8", "9"],
-    specChar: ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?","~"],
-    upprCase: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
-    lowrCase: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"], 
-  }
+
+   var numbers = [0, 1, 2, 3, 4, 5, 6 , 7, 8, 9];
+   var specChar = ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?","~"];
+   var upprCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+   var lowrCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]; 
   
   
-  choices = ["numbers", "specialChar", "upperCase", "lowerCase"]
+  
+  // choices = ["numbers", "specialChar", "upperCase", "lowerCase"]
   // chartype = choices[Math.floor(Math.random() * 4)]
   // passValue[chartype][Math.floor(Math.random()*10)]
+// characters.numbers etc
+// possiblity array, ask what characters
 
 
 // THINK IT OUT
 // I want to create a function that will take variables, in this case, upper and lower case letters, numbers 0-9, special characters, and store those values for future use.
 // Next I need to set parameters for how many characters I want to be generated in a random password. Between 8-128.
 // Then I want my stored values to be randomly selected, and from my parameters, return a string the falls in the confines of how many characters I want.
-  function generatePassword() {
-    debugger;
-    var characters = choices
-    charType = choices[Math.floor(Math.random() * 4)]
-    // characters[chartype][Math.floor(Math.random()*10)]
-  // var character = "qwertyhfhg"
+function chooseOption() {
+// Need variables for password length
+// Need variables for length to be <= 8 and >=128
+
+// prompt for password length
+  var passLength = parseInt(prompt("How long would you like your password to be?"));
+
+  if ((passLength < 8) || (length > 128)) {
+    alert("The password must have a minimum of 8 characters!");
+    return;
+  }
+}
+ 
+
+
+
+
+
+
+
+
+
+function generatePassword() {
+  
+  // var allCharacters = (numbers, specChar, upprCase, lowrCase);
   var result = "";
-  for(i=0; i<10; i++){
-    var randomIndex = Math.floor(Math.random() * characters.length)
-    // console.log(randomIndex, word[randomIndex])
-    result += chars[randomIndex]
+
+
+
+  for(i=0; i < upprCase.length; i++){
+    var randomIndex = [Math.floor(Math.random() * upprCase.length)]
+     
+    result += upprCase[randomIndex];
   }
   
   return result
-}
+};
 
-// var addition = function(numOne, numTwo){
-//   return numOne + numTwo;
-// }
-// addition(1, 2)
+
 
 // Write password to the #password input
 function writePassword() {
