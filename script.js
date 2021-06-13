@@ -40,17 +40,30 @@ var generateBtn = document.querySelector("#generate");
 // I want to create a function that will take variables, in this case, upper and lower case letters, numbers 0-9, special characters, and store those values for future use.
 // Next I need to set parameters for how many characters I want to be generated in a random password. Between 8-128.
 // Then I want my stored values to be randomly selected, and from my parameters, return a string the falls in the confines of how many characters I want.
+
 function chooseOption() {
 // Need variables for password length
 // Need variables for length to be <= 8 and >=128
 
 // prompt for password length
-  var passLength = parseInt(prompt("How long would you like your password to be?"));
+var passLength = parseInt(prompt("How many characters would your like your password to contain?"));
 
-  if ((passLength < 8) || (length > 128)) {
-    alert("The password must have a minimum of 8 characters!");
-    return;
-  }
+var howLong = confirm('How many characters would you like your password to contain?');
+ if (passLength < 8) {
+   alert('The password must contain a minimum of 8 characters.');
+   return;
+ }
+
+ if (passLength > 128) {
+   alert('The password can have a maximum of 128 characters.');
+   return;
+ }
+
+ 
+
+//  ask which characters should be included
+var chooseNumbers = ("")
+
 }
  
 
@@ -74,9 +87,31 @@ function generatePassword() {
      
     result += upprCase[randomIndex];
   }
+
+  for(i=0; i < upprCase.length; i++){
+    var randomIndex = [Math.floor(Math.random() * lowrCase.length)]
+
+    result += lowrCase[randomIndex];
+  }
+
+  for (i=0; i < specChar.length; i++){
+    var randomIndex = [Math.floor(Math.random() * specChar.length)]
+
+    result += specChar[randomIndex];
+  }
+
+  for (i=0; i < numbers.length; i++){
+    var randomIndex = [Math.floor(Math.random() * numbers.length)]
+
+    result += numbers[randomIndex];
+  }
   
-  return result
+  return result 
+
+
 };
+
+// var scrambleResult = result
 
 
 
