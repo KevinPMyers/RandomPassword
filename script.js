@@ -136,10 +136,10 @@ function generatePassword() {
   // var allCharacters = (numbers, specChar, upprCase, lowrCase);
   var confirmLower, confirmUpper, confirmNum, confirmSpec;
 
-  confirmLower = confirm("ayyyy lower?");
-  confirmUpper = confirm("upper?");
-  confirmNum = confirm("num?");
-  confirmSpec = confirm("spec?");
+  confirmLower = confirm("Include lower case?");
+  confirmUpper = confirm("Include upper case?");
+  confirmNum = confirm("Include numbers?");
+  confirmSpec = confirm("Include special Characters?");
   
   // console.log(length, confirmLower, confirmUpper, confirmNum, confirmSpec)
   // var result = "Kevin";
